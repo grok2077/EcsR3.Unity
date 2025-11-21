@@ -46,6 +46,7 @@ namespace EcsR3.Unity.Systems
             var gameObject = view as GameObject;
             var entityView = gameObject.GetComponent<EntityView>();
             entityView.Entity = entity;
+            entityView.EntityComponentAccessor = accessor;
 
             OnViewAllocated(gameObject, entity);
         }
