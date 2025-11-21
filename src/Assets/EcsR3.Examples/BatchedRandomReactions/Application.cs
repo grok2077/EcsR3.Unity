@@ -22,7 +22,7 @@ namespace EcsR3.Examples.BatchedRandomReactions
                 {
                     { typeof(ViewComponent), new PoolConfig(_cubeCount) },
                     { typeof(ViewDataComponent), new PoolConfig(_cubeCount) },
-                    { typeof(RandomColorComponent), new PoolConfig(_cubeCount) },
+                    { typeof(BatchedRandomColorComponent), new PoolConfig(_cubeCount) },
                 }
             };
         }
