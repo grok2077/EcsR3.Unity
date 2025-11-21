@@ -45,6 +45,7 @@ namespace EcsR3.Unity.Systems
             {
                 entityBinding = viewGameObject.AddComponent<EntityView>();
                 entityBinding.Entity = entity;
+                entityBinding.EntityComponentAccessor =  accessor;
             }
 
             if (viewComponent.DestroyWithView)

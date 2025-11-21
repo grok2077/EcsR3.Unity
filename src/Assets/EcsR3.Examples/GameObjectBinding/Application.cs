@@ -14,8 +14,8 @@ namespace EcsR3.Examples.GameObjectBinding
             EntityComponentAccessor.CreateComponent<CubeComponent>(cubeEntity);
 
             var sphereEntity = EntityCollection.Create();
-            EntityComponentAccessor.CreateComponent<ViewComponent>(cubeEntity);
-            EntityComponentAccessor.CreateComponent<SphereComponent>(cubeEntity);
+            EntityComponentAccessor.CreateComponent<ViewComponent>(sphereEntity);
+            EntityComponentAccessor.CreateComponent<SphereComponent>(sphereEntity);
         }
     }
 }

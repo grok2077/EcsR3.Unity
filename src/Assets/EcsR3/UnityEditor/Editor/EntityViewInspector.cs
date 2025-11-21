@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using EcsR3.Collections.Entities;
 using EcsR3.Components;
 using EcsR3.Unity.Extensions;
 using EcsR3.Unity.MonoBehaviours;
@@ -24,7 +25,9 @@ namespace EcsR3.UnityEditor.Editor
             _entityDataAspect = new EntityDataUIAspect(_entityDataProxy, this);
 
             _entityDataProxy.EntityId = _entityView.Entity.Id;
-            _entityDataProxy.Components = new List<IComponent>(_entityView.GetEcsComponents());
+            _entityDataProxy.Components = new List<IComponent>();
+            if (_entityDataProxy.EntityId != IEntityAllocationDatabase.NoAllocation)
+            { _entityDataProxy.Components.AddRange(_entityView.GetEcsComponents()); }
         }
         
         private void PoolSection()
@@ -70,7 +73,7 @@ namespace EcsR3.UnityEditor.Editor
         {
             _entityView = (EntityView)target;
 
-            if (_entityView.Entity.Id == -1)
+            if (_entityView.Entity.Id == IEntityAllocationDatabase.NoAllocation)
             {
                 EditorGUILayout.LabelField("No Entity Assigned");
                 return;

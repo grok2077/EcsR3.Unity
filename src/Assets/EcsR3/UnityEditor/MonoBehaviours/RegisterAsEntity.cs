@@ -104,6 +104,7 @@ namespace EcsR3.UnityEditor.MonoBehaviours
         {
             var entityBinding = gameObject.AddComponent<EntityView>();
             entityBinding.Entity = entity;
+            entityBinding.EntityComponentAccessor = EntityComponentAccessor;
         }
     }
 }
